@@ -7,7 +7,7 @@ from sklearn.externals import joblib
 
 filename = 'nlp_model.pkl'
 clf = pickle.load(open(filename, 'rb'))
-cv = pickle.load(open('transform.pkl', 'rb'))
+cv = pickle.load(open('tranform.pkl', 'rb'))
 app = Flask(__name__)
 
 @app.route('/')
@@ -49,5 +49,5 @@ def predict():
 	return render_template('result.html', prediction=my_prediction)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	app.run(debug=True)	
